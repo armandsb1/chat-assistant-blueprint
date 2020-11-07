@@ -8,6 +8,7 @@ const client = platformClient.ApiClient.instance;
 // API instances
 const usersApi = new platformClient.UsersApi();
 const conversationsApi = new platformClient.ConversationsApi();
+client.setEnvironment('mypurecloud.de');
 
 let userId = '';
 let agentID;
@@ -83,7 +84,7 @@ const urlParams = new URLSearchParams(window.location.search);
 currentConversationId = urlParams.get('conversationid');
 
 client.loginImplicitGrant(
-    '5f3e661d-61be-4a13-b536-3f54f24e26c9',
+    '7f743c93-8ca9-47f8-b395-a84928940d62',
     'https://mypurecloud.github.io/chat-assistant-blueprint/',
     { state: currentConversationId })
 .then(data => {
